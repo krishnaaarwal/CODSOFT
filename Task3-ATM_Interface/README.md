@@ -1,92 +1,72 @@
-Overview
-A fully-functional ATM machine simulator implementing core banking operations using Java and Object-Oriented Programming principles. Developed as part of the Java learning path.
+# ATM Machine Simulator (Java, OOP)
 
-Features
-💳 Account Types
+A fully functional ATM machine simulator built using Java and object-oriented programming principles. Enables secure, console-based banking interactions with clear structure and modularity.
 
-Savings Account (minimum balance enforcement)
+---
 
-Current Account (overdraft facility)
+##  Features
 
-🔐 Secure Transactions
+- **Account Types**  
+  - Savings Account (enforces minimum balance)  
+  - Current Account (supports overdraft)
 
-PIN verification (simulated)
+- **Secure Transactions**  
+  - PIN (simulated) verification  
+  - Robust input validation
 
-Input validation
+- **Banking Operations**  
+  - Cash withdrawal  
+  - Cash deposit  
+  - Balance inquiry
 
-💰 Banking Operations
+- **Error Handling**  
+  - Handles invalid inputs (e.g., negative amounts)  
+  - Prevents overdrawing and enforces safety limits
 
-Cash withdrawal
+---
 
-Cash deposit
+##  How to Run
 
-Balance inquiry
+```bash
+git clone https://github.com/yourusername/CODSOFT.git
+cd CODSOFT/Task3-ATM_Machine
+javac ATM_Machine.java
+java ATM_Machine
 
-🛡️ Error Handling
-
-Invalid amount detection
-
-Minimum balance protection
-
-Type-safe input validation
-
--- Technical Implementation
-Code
-
+Design Overview
 classDiagram
-    class ATM_Machine{
+    class ATM_Machine {
         +main()
     }
-    
-    abstract class Account{
+
+    abstract class Account {
         -balance
         +deposit()
         +checkBalance()
         +withdraw()*
     }
-    
-    class Saving{
+
+    class Saving {
         -minBalance
         +withdraw()
     }
-    
-    class Current{
+
+    class Current {
         +withdraw()
     }
-    
+
     ATM_Machine --> Account
     Account <|-- Saving
     Account <|-- Current
 
-How to Run
-Clone the repository:
+Highlighted Principles
+SOLID Design
 
-git clone https://github.com/yourusername/ATM-Interface-Java.git
+Clean architecture and object separation
 
-Compile and run:
+Structured error handling and input safety measures
 
-javac ATM_Machine.java
-java ATM_Machine
+License & Author
+License: MIT (free for personal and educational use)
 
-Best Practices Demonstrated
-SOLID Principles
-
-Encapsulation
-
-Polymorphism
-
-Exception Handling
-
-Clean Code Architecture
-
-Future Enhancements
-Database integration
-
-Transaction history
-
-GUI implementation
-
-Multi-user support
-
-License
-MIT License - Free for educational and personal use
+Author: Krishna Agarwal — Java Intern @ CodSoft
